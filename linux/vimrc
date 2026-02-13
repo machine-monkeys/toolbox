@@ -1,0 +1,25 @@
+" Core
+syntax on
+colorscheme industry
+set encoding=utf-8
+set number
+set numberwidth=1
+
+" Python
+augroup ft_python
+  autocmd!
+  autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
+" Bash & Sh
+augroup ft_shell
+  autocmd!
+  autocmd FileType sh,bash setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+" YAML
+augroup ft_yaml
+  autocmd!
+  autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
