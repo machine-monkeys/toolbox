@@ -1,0 +1,5 @@
+# Ignore scratch space
+*
+
+# Keep .gitignore as placeholder
+!.gitignore
