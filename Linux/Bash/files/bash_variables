@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# ASCII
+bell=$'\a'

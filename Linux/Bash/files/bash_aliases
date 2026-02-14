@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# General
+alias ll="ls -lh"
+alias la="ls -A"
+alias lz="ls -lZ"
+alias ld="ls -ld"
+alias l1="ls -1"
+
+# Ansible
+alias apb="ansible-playbook"
+alias adoc="ansible-doc"
+

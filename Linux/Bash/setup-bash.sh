@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 BD="$HOME/.bashrc.d"
-[[ -d "$BD" ]] || mkdir -p "$BD"
-[[ -f "$BD/bash_prompt" ]] || cp ./files/bash_prompt "$BD/bash_prompt"
+[[ -d "$BD" ]] || mkdir -p "$BD" && echo "OK: $BD"
 
-if ! grep -qxF "Source Bash Files" "$HOME/.bashrc"; then
+find files -iname 'bash_*' -type f -printf 'OK: %f\n' -exec cp {} "$BD/" \; 
+
+if ! grep -q "Source Bash Files" "$HOME/.bashrc"; then
 cat >> "$HOME/.bashrc" <<'EOF'
 # Source Bash Files
 for f in "$HOME/.bashrc.d"/*; do
@@ -13,6 +14,5 @@ done
 EOF
 fi
 
-echo
 echo -e "Bash environment setup."
 
