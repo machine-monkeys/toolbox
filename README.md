@@ -4,4 +4,8 @@ Personal software tools, scripts and configuration files that I plan to use and 
 
 ---
 
+Featuring:
+
+- Bash
+- Vim
 
