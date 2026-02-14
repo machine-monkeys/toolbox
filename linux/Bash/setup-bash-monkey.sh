@@ -12,8 +12,6 @@ if [[ -f "$HOME/.bash_monkey" ]]; then
 fi
 EOF
 
-source "$HOME/.bashrc"
-
 echo -e "\n ## Bash Monkey Installed ##\n"    
 cat<<'EOF'
             __,__
