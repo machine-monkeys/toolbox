@@ -96,7 +96,7 @@ prompt() {
         # Git branch dirty flag
         b=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) || b=""
         [[ -n "$b" ]] && F1="${REPO_CLR}${b}"
-        if ! { git diff --quiet --ignore-submodules -- || git diff --quiet --cached --ignore-submodules; } && [[ "$DIRTY_FLAG" == true ]]; then
+        if [[ "$DIRTY_FLAG" == true ]] && { ! git diff --quiet --ignore-submodules -- || ! git diff --quiet --cached --ignore-submodules; } ; then
             F1+="${DFLAG_CLR}${DFLAG}"
         fi
     elif [[ -n ${VIRTUAL_ENV-} ]]; then
