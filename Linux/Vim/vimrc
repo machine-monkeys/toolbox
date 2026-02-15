@@ -27,5 +27,5 @@ augroup END
 " Bash, YAML, HTML, CSS 
 augroup ft_others
   autocmd!
-  autocmd FileType sh,bash setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType sh,bash,yaml,html,css setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
