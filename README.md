@@ -1,6 +1,6 @@
-# Gino's Toolbox
+# Monkey Toolbox
 
-Personal software tools, scripts and configuration files that I plan to use and develop on a regular basis.
+Every monkey needs a toolbox.
 
 ---
 
@@ -8,4 +8,5 @@ Featuring:
 
 - Bash
 - Vim
+
 
