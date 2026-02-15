@@ -23,3 +23,6 @@ body {
   line-height: 1.5;
   font-family: system-ui, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, Arial, sans-serif;
 }
+a:link {
+  color: #7dd3fc; 
+}
