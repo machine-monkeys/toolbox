@@ -7,3 +7,11 @@ gitm() {
     git push
 }
 
+manhtml() {
+  query="$1"
+  man -Thtml "$query" > "${query}.html" 2> /dev/null
+  if [[ -d /srv/www/man ]]; then
+    letter=${query:0:1}
+    mv "$query" "/srv/www/man/${letter^^}"
+  fi
+}
