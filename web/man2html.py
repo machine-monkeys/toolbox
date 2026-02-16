@@ -33,6 +33,12 @@ class ManHTML:
         else:
             raise ValueError("No New HTML.")
 
+    def add_return_link(self):
+        h1_pattern = re.compile(r"<h1.*h1>", flags=re.I | re.S)
+
+        alink = '  <a href="../../">BACK</a>'
+        self.html = h1_pattern.sub(r"\g<0>\n" + alink, self.html, count=1)  
+
     def write_html(self, directory=None):
         if directory:
             with open(f"{directory}/{self.resource}.html", "w") as f:
