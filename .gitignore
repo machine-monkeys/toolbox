@@ -1,3 +1,5 @@
 # Ignore anythin with *secret*
 *secret**
 
+# Ignore pycache
+*__pycache__**
