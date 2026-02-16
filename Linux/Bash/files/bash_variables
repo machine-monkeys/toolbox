@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+# Existing Environement Variables
+export LS_COLORS="$LS_COLORS:ow=38;5;208"
+
 # ASCII
-bell=$'\a'
+export bell=$'\a'
