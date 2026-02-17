@@ -51,8 +51,8 @@ class ManHTML:
             if m2:
                 insert_index2 = index
                 break
-        if not m:
-            sys.exit(f"No matches found in h1 block")
+        if not insert_index and not insert_index2:
+            sys.exit(f"No matches found in found to insert link.")
 
         new_line = '<p class="backlink"><a href="../">Go Back to Browsing Local Man Pages</a></p>'
         self.html = "\n".join(lines[:insert_index] + [new_line, "<hr>"] + lines[insert_index:insert_index2] + [new_line] + lines[insert_index2:])
