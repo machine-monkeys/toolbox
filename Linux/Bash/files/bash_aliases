@@ -12,4 +12,7 @@ alias lls="ls -laZ"
 # Ansible
 alias apb="ansible-playbook"
 alias adoc="ansible-doc"
-
+ 
+# Python
+alias py="/usr/bin/env python3"
+alias pip="/usr/bin/env pip3"
