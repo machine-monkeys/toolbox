@@ -3,6 +3,7 @@ from textwrap import dedent
 from pathlib import Path
 import subprocess
 import argparse
+import sys
 import re
 
 class ManHTML:
@@ -32,12 +33,23 @@ class ManHTML:
             self.html = new_html    
         else:
             raise ValueError("No New HTML.")
+ 
+    def insert_link(self):
+        lines = self.html.splitlines()
 
-    def add_return_link(self):
-        h1_pattern = re.compile(r"<h1.*h1>", flags=re.I | re.S)
+        insert_index = None
+        h1_pattern = re.compile(r"<h1[^>]*>.*?</h1>")
 
-        alink = '  <a href="../../">BACK</a>'
-        self.html = h1_pattern.sub(r"\g<0>\n" + alink, self.html, count=1)  
+        for index, line in enumerate(lines):
+            m = h1_pattern.search(line)
+            if m:
+                insert_index = index + 1
+                break
+        if not m:
+            sys.exit(f"No matches found in h1 block")
+
+        new_line = '\n<a href="../../">Go Back to Man pages</a>'
+        self.html = "\n".join(lines[:insert_index] + [new_line] + lines[insert_index:])
 
     def write_html(self, directory=None):
         if directory:
@@ -56,11 +68,13 @@ class ManHTML:
     def convert_to_html(self, directory=None):
         self.get_manhtml()
         self.replace_head()
+        self.insert_link()
         self.write_html(directory=directory)
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("resource")
+    p.add_argument("-d", "--dir")
     args = p.parse_args()
 
     manpage = ManHTML(args.resource)
