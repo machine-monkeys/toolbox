@@ -57,6 +57,10 @@ class ManHTML:
         new_line = '<p class="backlink"><a href="../">Go Back to Browsing Local Man Pages</a></p>'
         self.html = "\n".join(lines[:insert_index] + [new_line, "<hr>"] + lines[insert_index:insert_index2] + [new_line] + lines[insert_index2:])
 
+    def replace_bold_colors(self):
+        self.html = self.html.replace("#000000", "#7A7A7A")
+        self.html = self.html.replace("#0000FF", "#9393FF")
+
     def write_html(self, directory=None):
         if directory:
             with open(f"{directory}/{self.resource}.html", "w") as f:
@@ -75,6 +79,7 @@ class ManHTML:
         self.get_manhtml()
         self.replace_head()
         self.insert_link()
+        self.replace_bold_colors()
         self.write_html(directory=directory)
 
 def main():
