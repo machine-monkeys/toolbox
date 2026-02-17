@@ -48,8 +48,8 @@ class ManHTML:
         if not m:
             sys.exit(f"No matches found in h1 block")
 
-        new_line = '\n<a href="../../">Go Back to Man pages</a>'
-        self.html = "\n".join(lines[:insert_index] + [new_line] + lines[insert_index:])
+        new_line = '<a href="../">Go Back to Browsing Local Man Pages</a>'
+        self.html = "\n".join(lines[:insert_index] + [new_line, "<br>"] + lines[insert_index:])
 
     def write_html(self, directory=None):
         if directory:
