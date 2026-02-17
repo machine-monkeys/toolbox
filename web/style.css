@@ -26,3 +26,8 @@ body {
 a:link, a:visited {
   color: #9393ff; 
 }
+
+.backlink {
+  display: block;
+  text-align: center;
+}
