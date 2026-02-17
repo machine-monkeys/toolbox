@@ -40,16 +40,22 @@ class ManHTML:
         insert_index = None
         h1_pattern = re.compile(r"<h1[^>]*>.*?</h1>")
 
+        insert_index2 = None
+        body_pattern = re.compile(r"</body>")
+
         for index, line in enumerate(lines):
             m = h1_pattern.search(line)
+            m2 = body_pattern.search(line)
             if m:
                 insert_index = index + 1
+            if m2:
+                insert_index2 = index
                 break
         if not m:
             sys.exit(f"No matches found in h1 block")
 
-        new_line = '<a class="backlink" href="../">Go Back to Browsing Local Man Pages</a>'
-        self.html = "\n".join(lines[:insert_index] + [new_line, "<hr>"] + lines[insert_index:])
+        new_line = '<p class="backlink"><a href="../">Go Back to Browsing Local Man Pages</a></p>'
+        self.html = "\n".join(lines[:insert_index] + [new_line, "<hr>"] + lines[insert_index:insert_index2] + [new_line] + lines[insert_index2:])
 
     def write_html(self, directory=None):
         if directory:
