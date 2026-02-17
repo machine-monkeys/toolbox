@@ -14,8 +14,7 @@ table {
   vertical-align: top 
 }
 h1 { 
-  text-align: 
-  center 
+  text-align: center;
 }
 body {
   background: #0f1115;
@@ -26,8 +25,6 @@ body {
 a:link, a:visited {
   color: #9393ff; 
 }
-
 .backlink {
-  display: block;
   text-align: center;
 }
