@@ -17,7 +17,7 @@ class ManHTML:
         if p.stdout:
             self.html = p.stdout
         else:
-            raise ValueError(f"No stdout for {cmd.join(' ')}")
+            raise ValueError(f"No stdout for {' '.join(cmd)}")
 
     def replace_head(self):
         new_head = dedent(f'''<head>
