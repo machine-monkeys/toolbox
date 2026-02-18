@@ -14,17 +14,7 @@ alias apb="ansible-playbook"
 alias adoc="ansible-doc"
  
 # Python
-if rpm -q python3.12 && python3.12 -m pip --version; then
-  alias python="/usr/bin/env python3.12"
-  alias py="/usr/bin/env python3.12"
-  alias pip="/usr/bin/env pip3.12"
-elif rpm -q python39; then
-  alias python="/usr/bin/env python3.9"
-  alias py="/usr/bin/env python3.9"
-  alias pip="/usr/bin/env python3.9 -m pip"
-else
-  alias python="/usr/bin/env python3"
-  alias py="/usr/bin/env python3"
-  alias pip="/usr/bin/env python3 -m pip"
-fi
+alias python="/usr/bin/env python3"
+alias py="/usr/bin/env python3"
+alias pip="/usr/bin/env python3 -m pip"
   
